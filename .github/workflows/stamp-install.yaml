@@ -2226,7 +2226,7 @@ jobs:
         run: |
           echo "Checking Deployment Exists"
           echo "----------------------------------------"
-          echo $(kubectl get deployments)
+          echo $(kubectl get deployments -n airflow)
           attempt_counter=0
           max_attempts=30
           until kubectl get deployment appinsights-statsd -n airflow
