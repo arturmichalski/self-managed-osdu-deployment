@@ -2223,36 +2223,36 @@ jobs:
           done
 
       - name: Airflow Base - Wait
-        # run: |
-          # echo "Checking Deployment Exists"
-          # echo "----------------------------------------"
-          # echo $(kubectl get deployments -n airflow)
-          # attempt_counter=0
-          # max_attempts=30
-          # until kubectl get deployment appinsights-statsd -n airflow
-          # do
-            # if [ ${attempt_counter} -eq ${max_attempts} ];then
-              # echo "Deployment Image not updated 1, integration tests are skipped"
-              # exit 1
-            # fi
-            # attempt_counter=$(($attempt_counter+1))
-            # sleep 30
-          # done
+        run: |
+          echo "Checking Deployment Exists"
+          echo "----------------------------------------"
+          echo $(kubectl get deployments -n airflow)
+          attempt_counter=0
+          max_attempts=30
+          until true
+          do
+            if [ ${attempt_counter} -eq ${max_attempts} ];then
+              echo "Deployment Image not updated 1, integration tests are skipped"
+              exit 1
+            fi
+            attempt_counter=$(($attempt_counter+1))
+            sleep 30
+          done
 
-          # echo "Checking Deployment Exists"
-          # echo "----------------------------------------"
-          # echo $(kubectl get deployments)
-          # attempt_counter=0
-          # max_attempts=30
-          # until kubectl get deployment default -n osdu-azure
-          # do
-            # if [ ${attempt_counter} -eq ${max_attempts} ];then
-              # echo "Deployment Image not updated 2, integration tests are skipped"
-              # exit 1
-            # fi
-            # attempt_counter=$(($attempt_counter+1))
-            # sleep 30
-          # done
+          echo "Checking Deployment Exists"
+          echo "----------------------------------------"
+          echo $(kubectl get deployments)
+          attempt_counter=0
+          max_attempts=30
+          until kubectl get deployment default -n osdu-azure
+          do
+            if [ ${attempt_counter} -eq ${max_attempts} ];then
+              echo "Deployment Image not updated 2, integration tests are skipped"
+              exit 1
+            fi
+            attempt_counter=$(($attempt_counter+1))
+            sleep 30
+          done
 
 
       - name: Helm Install
