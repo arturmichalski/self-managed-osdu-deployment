@@ -242,7 +242,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/istio-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: osdu-istio
@@ -259,7 +259,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/dev-sample-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: env-tool
@@ -280,7 +280,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/airflow-base-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: airflow-base
@@ -303,7 +303,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/self-managed-base-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: self-managed-base
@@ -333,7 +333,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/default-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: default-service
@@ -357,7 +357,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/token-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: token-service
@@ -378,7 +378,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/partition-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: partition-service
@@ -453,7 +453,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/entitlement-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: entitlement-service
@@ -525,7 +525,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/legal-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: legal-service
@@ -615,7 +615,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/storage-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: storage-service
@@ -723,7 +723,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/schema-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: schema-service
@@ -802,7 +802,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/file-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: file-service
@@ -897,7 +897,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/dataset-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: dataset-service
@@ -979,7 +979,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/indexer-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: indexer-service
@@ -1070,7 +1070,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/indexer-queue-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: indexer-queue
@@ -1144,7 +1144,7 @@ jobs:
           APP_INSIGHTS_KEY=$(az keyvault secret show --id https://${ENV_VAULT}.vault.azure.net/secrets/appinsights-key --query value -otsv)
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/search-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: search-service
@@ -1248,7 +1248,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/notification-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: notification-service
@@ -1340,7 +1340,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/register-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: register-service
@@ -1415,7 +1415,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/unit-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: unit-service
@@ -1483,7 +1483,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/crs-catalog-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: crs-catalog
@@ -1551,7 +1551,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/crs-conversion-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: crs-conversion
@@ -1625,7 +1625,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/wks-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: wks-service
@@ -1703,7 +1703,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/workflow-service-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: workflow-service
@@ -1803,7 +1803,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/ddms-seismic-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: ddms-seismic
@@ -1863,7 +1863,7 @@ jobs:
         run: |
           cat > $GITHUB_WORKSPACE/apps/$CLUSTER/ddms-wellbore-values.yaml << EOF
           ---
-          apiVersion: helm.toolkit.fluxcd.io/v1beta2
+          apiVersion: helm.toolkit.fluxcd.io/v2beta1
           kind: HelmRelease
           metadata:
             name: ddms-wellbore
