@@ -7,10 +7,10 @@ metadata:
 spec:
   values:
     ingress:
-      dns: osdu-self-dpliffd-m3p5-gw.eastus.cloudapp.azure.com
+      dns: osdu-self-dplhdge-bdp7-gw.eastus.cloudapp.azure.com
     configuration:
     - service: notification
-      repository: osduselfcpliffs01dcr.azurecr.io/notification
+      repository: osduselfcplhdg7ze1cr.azurecr.io/notification
       path: /api/notification/v1/*
       probe:
         path: /api/notification/v1/swagger-ui.html
