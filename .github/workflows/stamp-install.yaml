@@ -2229,7 +2229,7 @@ jobs:
           echo $(kubectl get deployments -n airflow)
           attempt_counter=0
           max_attempts=30
-          until true
+          until kubectl get deployment appinsights-statsd -n airflow
           do
             if [ ${attempt_counter} -eq ${max_attempts} ];then
               echo "Deployment Image not updated 1, integration tests are skipped"
