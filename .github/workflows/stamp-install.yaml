@@ -45,7 +45,7 @@ jobs:
       - name: Install Flux
         run: |
             kubectl get kustomizations --all-namespaces
-            kubectl describe kustomization flux-system
+            kubectl describe kustomization osdu-stamp
             export FLUX_VERSION=0.41.2 && curl -s https://fluxcd.io/install.sh | bash;
 
       - name: Bootstrap Flux
