@@ -8,7 +8,7 @@ spec:
   values:
     configuration:
     - scaledObject: wks
-      repository: osduselfcplhdg7ze1cr.azurecr.io/wks
+      repository: osduselfcplbgewz1wcr.azurecr.io/wks
       servicebusSubscription: eg_sb_wkssubscription
       servicebusTopic: recordstopiceg
       keyvault: true
