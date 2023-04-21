@@ -114,3 +114,21 @@ spec:
               {{- end }}
           {{- end }}
           {{- end }}
+
+
+apiVersion: keda.k8s.io/v1alpha1
+kind: ScaledObject
+metadata:
+  name: {{ include "env-debug.fullname" . }}
+spec:
+  scaleTargetRef:
+    name: {{ include "env-debug.fullname" . }}
+  minReplicaCount: 0
+  maxReplicaCount: 1
+  triggers:
+  - type: cron
+    metadata:
+      timezone: Etc/UTC 
+      start: 30 * * * *
+      end: 45 * * * *
+      desiredReplicas: "0"
