@@ -7,10 +7,10 @@ metadata:
 spec:
   values:
     ingress:
-      dns: osdu-self-dplhdge-bdp7-gw.eastus.cloudapp.azure.com
+      dns: osdu-self-dplbgeag-cwpq-gw.eastus.cloudapp.azure.com
     configuration:
     - service: token
-      repository: osduselfcplhdg7ze1cr.azurecr.io/self-managed-osdu-login
+      repository: osduselfcplbgewz1wcr.azurecr.io/self-managed-osdu-login
       tag: latest
       path: /login/*
       replicaCount: 1
