@@ -13,7 +13,7 @@ locals {
   helm_keda_name    = "keda"
   helm_keda_ns      = "keda"
   helm_keda_repo    = "https://kedacore.github.io/charts"
-  helm_keda_version = "1.5.0"
+  helm_keda_version = "2.10.1"
 }
 
 resource "kubernetes_namespace" "keda" {
