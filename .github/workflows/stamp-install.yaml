@@ -2258,7 +2258,7 @@ jobs:
 
       - name: Helm Install
         run: |
-          helm upgrade --install airflow $GITHUB_WORKSPACE/charts/airflow --values ${{ runner.temp }}/custom-values.yaml --namespace airflow
+          helm install airflow $GITHUB_WORKSPACE/charts/airflow --values ${{ runner.temp }}/custom-values.yaml --namespace airflow
 
       - name: User Job - Create
         run: |
