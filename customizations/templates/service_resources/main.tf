@@ -508,14 +508,15 @@ resource "azurerm_role_assignment" "postgres_access" {
 module "redis_cache" {
   source = "../../../modules/providers/azure/redis-cache"
 
-  name                = local.redis_cache_name
-  resource_group_name = azurerm_resource_group.main.name
-  capacity            = var.redis_capacity
+  name                			= local.redis_cache_name
+  resource_group_name 			= azurerm_resource_group.main.name
+  capacity            			= var.redis_capacity
 
-  memory_features     = var.redis_config_memory
-  premium_tier_config = var.redis_config_schedule
+  memory_features     			= var.redis_config_memory
+  premium_tier_config 			= var.redis_config_schedule
+  public_network_access_enabled = false
 
-  resource_tags = var.resource_tags
+  resource_tags 				= var.resource_tags
 }
 
 // Add Contributor Role Access
@@ -530,16 +531,17 @@ resource "azurerm_role_assignment" "redis_cache" {
 module "redis_queue" {
   source = "../../../modules/providers/azure/redis-cache"
 
-  name                = local.redis_queue_name
-  resource_group_name = azurerm_resource_group.main.name
-  capacity            = var.redis_capacity
-  sku_name            = var.redis_queue_sku_name
-  zones               = var.redis_queue_zones
+  name                			= local.redis_queue_name
+  resource_group_name 			= azurerm_resource_group.main.name
+  capacity            			= var.redis_capacity
+  sku_name           			= var.redis_queue_sku_name
+  zones               			= var.redis_queue_zones
+  public_network_access_enabled = false
 
-  memory_features     = var.redis_config_memory
-  premium_tier_config = var.redis_config_schedule
+  memory_features     			= var.redis_config_memory
+  premium_tier_config 			= var.redis_config_schedule
 
-  resource_tags = var.resource_tags
+  resource_tags 				= var.resource_tags
 }
 
 // Add Contributor Role Access
@@ -557,15 +559,16 @@ resource "azurerm_role_assignment" "redis_queue" {
 module "cosmosdb_account" {
   source = "../../../modules/providers/azure/cosmosdb"
 
-  name                     = local.cosmosdb_name
-  resource_group_name      = azurerm_resource_group.main.name
-  primary_replica_location = var.cosmosdb_replica_location
-  automatic_failover       = var.cosmosdb_automatic_failover
-  consistency_level        = var.cosmosdb_consistency_level
-  databases                = var.cosmos_databases
-  sql_collections          = var.cosmos_sql_collections
+  name                     		 = local.cosmosdb_name
+  resource_group_name      		 = azurerm_resource_group.main.name
+  primary_replica_location 		 = var.cosmosdb_replica_location
+  automatic_failover       		 = var.cosmosdb_automatic_failover
+  consistency_level        		 = var.cosmosdb_consistency_level
+  databases                		 = var.cosmos_databases
+  sql_collections          		 = var.cosmos_sql_collections
+   public_network_access_enabled = false
 
-  resource_tags = var.resource_tags
+  resource_tags 				 = var.resource_tags
 }
 
 // Add Access Control to Principal
